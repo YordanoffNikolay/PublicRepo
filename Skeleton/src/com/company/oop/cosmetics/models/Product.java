@@ -29,7 +29,7 @@ public abstract class Product implements com.company.oop.cosmetics.models.contra
         return name;
     }
 
-    public void setName(String name) {
+    private void setName(String name) {
         ValidationHelpers.validateStringLength(name, NAME_MIN_LENGTH, NAME_MAX_LENGTH, "Name");
         this.name = name;
     }
@@ -39,7 +39,7 @@ public abstract class Product implements com.company.oop.cosmetics.models.contra
         return brandName;
     }
 
-    public void setBrandName(String brandName) {
+    private void setBrandName(String brandName) {
         ValidationHelpers.validateStringLength(brandName,BRAND_NAME_MIN_LENGTH, BRAND_NAME_MAX_LENGTH, "Brand");
         this.brandName = brandName;
     }
@@ -61,7 +61,7 @@ public abstract class Product implements com.company.oop.cosmetics.models.contra
         return genderType;
     }
 
-    public void setGenderType(GenderType genderType) {
+    private void setGenderType(GenderType genderType) {
 
         this.genderType = genderType;
     }

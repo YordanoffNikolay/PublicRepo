@@ -32,7 +32,7 @@ public class ToothpasteImpl extends Product implements Toothpaste {
     }
 
 
-    //This method should be uncommented when you are done with the class.
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

@@ -7,6 +7,7 @@ import com.company.oop.cosmetics.utils.ParsingHelpers;
 import com.company.oop.cosmetics.utils.ValidationHelpers;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class CreateToothpasteCommand implements Command {
@@ -36,9 +37,10 @@ public class CreateToothpasteCommand implements Command {
         double price = Double.parseDouble(parameters.get(2));
         GenderType genderType = ParsingHelpers.tryParseGender(parameters.get(3));
         List<String> ingredients = new ArrayList<>();
-        for (int i = 4; i < parameters.size(); i++) {
+        ingredients = Arrays.stream(parameters.get(4).split(",")).toList();
+/*        for (int i = 4; i < parameters.size(); i++) {
             ingredients.add(parameters.get(i));
-        }
+        }*/
 
         cosmeticsRepository.createToothpaste(name,brandName,price,genderType,ingredients);
         return String.format(TOOTHPASTE_CREATED, name);

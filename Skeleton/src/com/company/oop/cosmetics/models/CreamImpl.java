@@ -14,7 +14,7 @@ public class CreamImpl extends Product implements Cream {
     }
 
 
-    public void setScentType(ScentType scentType) {
+    private void setScentType(ScentType scentType) {
         this.scentType = scentType;
     }
 
@@ -28,9 +28,20 @@ public class CreamImpl extends Product implements Cream {
     }
 
 
-
     @Override
     public ScentType getScent() {
         return scentType;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        CreamImpl cream = (CreamImpl) o;
+        return getName().equals(cream.getName()) &&
+                getBrandName().equals(cream.getBrandName()) &&
+                getPrice() == cream.getPrice() &&
+                this.getGenderType().equals(cream.getGenderType()) &&
+                getScent().equals(cream.getScent());
     }
 }

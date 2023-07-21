@@ -21,7 +21,7 @@ public class ShampooImpl extends Product implements Shampoo {
     }
 
 
-    public void setUsageType(UsageType usageType) {
+    private void setUsageType(UsageType usageType) {
         this.usageType = usageType;
     }
 
